@@ -1,16 +1,28 @@
 package com.crud.tasks.controller;
 
+import com.crud.tasks.domain.Task;
 import com.crud.tasks.domain.TaskDto;
+import com.crud.tasks.repository.TaskRepository;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/v1/task")
 public class TaskController {
+
+    private TaskRepository repository;
+
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "getById")
+    public Optional<Task> getById(Long id){
+        return repository.findById(id);
+    }
 
     @RequestMapping(method = RequestMethod.GET, value = "getTasks")
     public List<TaskDto> getTasks(){
