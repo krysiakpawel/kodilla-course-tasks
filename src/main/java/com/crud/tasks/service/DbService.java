@@ -1,6 +1,5 @@
 package com.crud.tasks.service;
 
-
 import com.crud.tasks.domain.Task;
 import com.crud.tasks.repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,11 +29,6 @@ public class DbService {
     public void deleteTask(final Long id){
         repository.deleteById(id);
     }
-
-
-
-
-
 }
 
 
