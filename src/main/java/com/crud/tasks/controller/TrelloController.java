@@ -35,12 +35,7 @@ public class TrelloController {
 
         });
     }
-//        trelloBoards.stream()
-//                .filter(c -> c.getName().contains("Kodilla"))
-//                .forEach(trelloBoardDto -> System.out.println(trelloBoardDto.getId() + " " + trelloBoardDto.getName()));
-//
-//    }
-//}
+
     @RequestMapping(method = RequestMethod.POST, value = "createTrelloCard")
     public CreatedTrelloCard createTrelloCard(@RequestBody TrelloCardDto trelloCardDto){
 
