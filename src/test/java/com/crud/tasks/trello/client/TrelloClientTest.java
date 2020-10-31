@@ -7,6 +7,7 @@ import com.crud.tasks.domain.TrelloCardDto;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
@@ -79,7 +80,7 @@ public class TrelloClientTest {
                 "http://test.com"
         );
 
-        when(restTemplate.postForObject(uri, null, CreatedTrelloCard.class)).thenReturn(createdTrelloCard);
+        when(restTemplate.postForObject(ArgumentMatchers.any(URI.class), ArgumentMatchers.any(), ArgumentMatchers.any())).thenReturn(createdTrelloCard);
 
         //When
         CreatedTrelloCard newCard = trelloClient.createNewCard(trelloCardDto);
