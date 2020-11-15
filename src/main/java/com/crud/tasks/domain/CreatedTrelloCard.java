@@ -19,4 +19,6 @@ public class CreatedTrelloCard {
     @JsonProperty("name")
     private String name;
 
+    @JsonProperty("shortUrl")
+    private String shortUrl;
 }
