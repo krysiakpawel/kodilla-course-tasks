@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 
+import java.util.Optional;
+
 @Service
 public class SimpleEmailService {
 
@@ -38,6 +40,7 @@ public class SimpleEmailService {
         mailMessage.setTo(mail.getMailTo());
         mailMessage.setSubject(mail.getSubject());
         mailMessage.setText(mail.getMessage());
+        mailMessage.setCc(Optional.ofNullable(mail.getToCc()).orElse(null));
         return mailMessage;
     }
 }
